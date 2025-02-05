@@ -9,13 +9,8 @@
     <h2>📂 Repository Structure</h2>
     <pre>
 C-DSA-Repository/
-├── Arrays
-├── LinkedLists
 ├── Stacks
-├── Queues
-├── Trees
-├── Graphs
-└── Sorting_Algorithms
+├── Queue(Soon)
     </pre>
     <p>Each folder contains:</p>
     <ul>
@@ -40,31 +35,11 @@ C-DSA-Repository/
         <li>Improve coding efficiency and <strong>problem-solving skills</strong>.</li>
         <li>Prepare for <strong>coding interviews</strong> and competitive programming.</li>
     </ul>
-    <h2>🚀 How to Use</h2>
-    <ol>
-        <li><strong>Clone the repository:</strong>
-            <pre><code>git clone https://github.com/your-username/c-dsa-repo.git</code></pre>
-        </li>
-        <li><strong>Navigate to the folder:</strong>
-            <pre><code>cd c-dsa-repo</code></pre>
-        </li>
-        <li><strong>Compile and run any C program:</strong>
-            <pre><code>gcc filename.c -o output
-./output</code></pre>
-        </li>
-    </ol>
-    <h2>🤝 Contributing</h2>
-    <p>Contributions are welcome! Feel free to:</p>
-    <ul>
-        <li>Report issues</li>
-        <li>Suggest improvements</li>
-        <li>Add new DSA problems and solutions</li>
-    </ul>
     <h2>📬 Contact</h2>
     <p>
         <strong>Kartik Patel</strong><br>
         Aspiring Software Engineer | MCA @ Dharmsinh Desai University<br>
         📧 <a href="mailto:kartikpatel7892@gmal.com">kartikpatel7892@gmail.com</a><br>
-        🔗 <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a> | 
-        <a href="https://github.com/your-username" target="_blank">GitHub</a>
+        🔗 <a href="https://www.linkedin.com/in/kartikmpatel/" target="_blank">LinkedIn</a> | 
+        <a href="https://github.com/kartikMpatel-Git-Hub/" target="_blank">GitHub</a>
     </p>
