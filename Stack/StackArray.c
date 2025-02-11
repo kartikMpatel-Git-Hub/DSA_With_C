@@ -2,6 +2,7 @@
 #include "string.h"
 #include "stdlib.h"
 
+
 int isEmpty(int top){
     if(top == -1){
         return 1;

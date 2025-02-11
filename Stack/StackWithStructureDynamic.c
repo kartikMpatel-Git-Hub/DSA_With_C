@@ -10,6 +10,7 @@ typedef struct
 }Stack;
 
 
+
 int isEmpty(Stack *s){
     if(s->top == -1){
         return 1;

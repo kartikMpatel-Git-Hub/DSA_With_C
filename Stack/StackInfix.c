@@ -72,6 +72,7 @@ int main(){
     for(int i = 0; i < strlen(expresion); i++){
         if(isAlpha(expresion[i])){
             infix[idx++] = expresion[i];
+            
         }
         else if(expresion[i] == '('){
             push(s1,'(');

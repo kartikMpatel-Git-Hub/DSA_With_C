@@ -17,6 +17,7 @@ int isEmpty(Stack *s){
     return 0;
 }
 
+
 int isFull(Stack *s){
     if((s->top+1) == s->size){
         return 1;
