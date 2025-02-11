@@ -4,7 +4,7 @@ typedef struct
 {
     int size;
     int top;
-      *data;
+    char *data;
 }Stack;
 
 int isEmpty(Stack *s){

@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "string.h"
+#include "stdlib.h"
 
 int isEmpty(int top){
     if(top == -1){
@@ -38,8 +39,9 @@ void pop(int *arr,int *top){
     --*top;
 }
 int main(){
+
     int n = 5;
-    int arr[n];
+    int *arr = (int *)calloc(n,sizeof(int));
     int top = -1;
     push(arr,1,&top,n);
     push(arr,2,&top,n);
