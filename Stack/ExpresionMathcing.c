@@ -50,51 +50,25 @@ Stack* createStack(){
     s->data = (char *)malloc(s->size * sizeof(char));
     return s;
 }
-int isAlpha(char ch){
-    if(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')
-        return 1;
-    return 0;
-}
-int checkPrecidence(char ch){
-    if (ch == '+' || ch == '-') 
-        return 1;
-    else if (ch == '*' || ch == '/') 
-        return 2;
-    else if (ch == '^') 
-        return 3;
-    return 0;
-}
 int main(){
-    Stack *s1 = createStack();
-    char expresion[] = "a+b*(c+d)";
-    char infix[strlen(expresion)];
-    int idx = 0;
+    Stack *s = createStack();
+    char expresion[] = "(([[[[[[{{{{{{}}}}}}]]]]]])({[[{{[[{{{[{{[[[]]]}}]}}}]]}}]]})({[]})(((()))))";
+    
     for(int i = 0; i < strlen(expresion); i++){
-        if(isAlpha(expresion[i])){
-            infix[idx++] = expresion[i];
-            
-        }
-        else if(expresion[i] == '('){
-            push(s1,'(');
-        }
-        else if(expresion[i] == ')'){
-            while (!isEmpty(s1) && peak(s1) != '(')
-            {
-                infix[idx++] = pop(s1);
-            }
-            pop(s1);
+        char ch = expresion[i];
+        if(ch == '(' || ch == '[' || ch == '{'){
+            push(s,ch);
         }
         else{
-            while (!isEmpty(s1) && checkPrecidence(s1->data[s1->top]) > checkPrecidence(expresion[i])){
-                infix[idx++] = pop(s1);
+            if(!ch == pop(s)){
+                printf("\n\nInvalid !");
+                return 0;
             }
-            push(s1,expresion[i]);
         }
     }
-    while (!isEmpty(s1))
-    {
-        infix[idx++] = pop(s1);
-    }
-    for(int i = 0; i < idx; i++)
-        printf("%c",infix[i]);
+    if(isEmpty(s))
+        printf("\n\nValid !");
+    else    
+        printf("\n\nInvalid");
+    return 1;
 }
