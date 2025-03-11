@@ -10,7 +10,9 @@
     <pre>
 C-DSA-Repository/
 ├── Stacks
-├── Queue(Soon)
+├── Queue
+├── LinkedList
+├── Tree(Soon)
     </pre>
     <p>Each folder contains:</p>
     <ul>
