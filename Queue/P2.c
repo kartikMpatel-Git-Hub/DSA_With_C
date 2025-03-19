@@ -1,14 +1,10 @@
 #include "../Stack/CHAR_STACK.c"
 #include "CHAR_QUEUE.c"
 
-void main(){
-    int n = 5;
-    QUEUE *q = createQueue(n);
-    STACK *s = createStack(n);
-    for(int i = 0; i < n; i++){
-        enQueue(q,(char)(97+i));
-    }
-    displayQueue(q);
+
+void reverseQueue(QUEUE *q){
+    
+    STACK *s = createStack(q->size);
     while (!isEmptyQueue(q))
     {
         push(s,deQueue(q));
@@ -21,6 +17,16 @@ void main(){
         enQueue(q,pop(s));
     }
 
+}
+void main(){
+    int n = 5;
+    QUEUE *q = createQueue(n);
+    for(int i = 0; i < n; i++){
+        enQueue(q,(char)(97+i));
+    }
+    displayQueue(q);
+    
+    reverseQueue(q);
     displayQueue(q);
 
 }

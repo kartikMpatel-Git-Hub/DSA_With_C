@@ -17,7 +17,7 @@ QUEUE* createQueue(int size){
 }
 
 int isFullQueue(QUEUE *q){
-    return (q->rear == q->size-1);
+    return (q->rear == q->size -1);
 }
 
 int isEmptyQueue(QUEUE *q){

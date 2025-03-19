@@ -9,9 +9,10 @@
     <h2>📂 Repository Structure</h2>
     <pre>
 C-DSA-Repository/
-├── Stacks
-├── Queue
+        
 ├── LinkedList
+├── Queue
+├── Stacks
 ├── Tree(Soon)
     </pre>
     <p>Each folder contains:</p>
