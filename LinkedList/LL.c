@@ -1,7 +1,5 @@
 #include "stdio.h"
 #include "stdlib.h"
-
-
 typedef struct Node
 {
     int data;
@@ -51,9 +49,38 @@ void insertLast(LL *list,int data){
     list->tail = newNode;
 }
 
+int isEmpty(LL *list){
+    return list->head == NULL;
+}
+
+void enQueue(LL *list,int data){
+    
+    Node *newNode = createNode(data);
+    if(list->head == NULL){
+        list->head = newNode;
+        return;
+    }
+    Node *temp = list->head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    list->tail = newNode;
+}
+
 int deleteFirst(LL *list){
     if(list->head == NULL){
         printf("List Is EMpty !!");
+        return -1;
+    }
+    int data = list->head->data;
+    list->head = list->head->next;
+    return data;
+}
+int deQueue(LL *list){
+    if(list->head == NULL){
+        printf("Queue Is EMpty !!");
         return -1;
     }
     int data = list->head->data;
@@ -218,6 +245,15 @@ int searchNode(LL *list,int key){
     }
     return -1;
 }
+
+void solve (Node* start) {
+    if (start == NULL)
+        return;
+    printf("%d ", start->data);
+    if(start->next != NULL )
+        solve (start->next->next);
+    printf("%d ", start->data);
+}
 void display(LL *list){
     if(list->head == NULL){
         printf("\nList Has No Elements !!");
@@ -231,4 +267,12 @@ void display(LL *list){
         temp = temp->next;
     }
     printf("NULL");
+}
+
+void displayRecursion(Node *head){
+    if(head == NULL){
+        return;
+    }
+    printf("%d\t",head->data);
+    displayRecursion(head->next);   
 }

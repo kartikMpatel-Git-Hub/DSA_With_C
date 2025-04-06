@@ -228,3 +228,21 @@ void displayRev(LL *list){
     }while(temp != NULL);
     printf("NULL");
 }
+
+Node *reverse(Node *head){
+    if(head == NULL || head->next == NULL)
+        return head;
+    Node* temp = head->next;
+    head->next = head->prev;
+    head->prev = temp;
+    
+    Node *newHead = reverse(temp);
+    temp->next = head;
+    return newHead;
+}
+
+void reveserList(LL *list){
+    list->tail = list->head;
+    list->head = reverse(list->head);
+    list->head->prev = NULL;
+}

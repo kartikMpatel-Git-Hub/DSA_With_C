@@ -1,15 +1,32 @@
-#include "Booking.c"
+#include "LL.c"
 
 void main(){
     
-    Queue *q = createQueue();
-    enQueue(q,1,4);
-    enQueue(q,2,2);
-    enQueue(q,3,3);
-    enQueue(q,4,1);
-    enQueue(q,5,5);
-    display(q);
+    // Queue *q = createQueue();
+    // enQueue(q,1,4);
+    // enQueue(q,2,2);
+    // enQueue(q,3,3);
+    // enQueue(q,4,1);
+    // enQueue(q,5,5);
+    // display(q);
 
+    // 25->26->27->28->29->3->7
+    LL *list = createList();
+    insertLast(list,25);
+    insertLast(list,26);
+    insertLast(list,27);
+    insertLast(list,28);
+    insertLast(list,29);
+    insertLast(list,3);
+    insertLast(list,7);
+
+    solve(list->head);
+
+    printf("\n\n");
+    displayRecursion(list->head);
+    printf("\n\n");
+
+    displayRecursion(list->head);
 
 
 

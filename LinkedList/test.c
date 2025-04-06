@@ -1,9 +1,48 @@
 // #include "SingleLinkedList.c"
 // #include "StackLL.c"
 // #include "QueueLL.c"
+// #include "CLLCHAR.c"
+// #include "DLLSTUDENT.c"
+#include "DLLT.c"
 
 void main(){
 
+    LL* list = createList();
+    insertLast(list,1);
+    insertLast(list,2);
+    insertLast(list,3);
+    insertLast(list,4);
+    insertLast(list,5);
+
+    display(list);
+    displayRev(list);
+
+    reveserList(list);
+    display(list);
+    displayRev(list);
+    // LL *list = createList();
+    // insertLast(list,"101","Kartik","Male");
+    // insertLast(list,"102","Kartik1","Male");
+    // insertLast(list,"103","Kartik2","Female");
+    // insertLast(list,"104","Kartik3","Male");
+
+    // display(list);
+    // LL *list = createList();
+    // insertLast(list,'a');
+    // insertLast(list,'b');
+    // insertLast(list,'c');
+    // insertLast(list,'d');
+    // insertLast(list,'e');
+    // insertLast(list,'f');
+    // insertLast(list,'g');
+
+    // display(list);
+    // deleteLast(list);
+    // display(list);
+    // deleteFirst(list);
+    // display(list);
+
+    
     /*SingleLinkedList *list;
     display(list);
 

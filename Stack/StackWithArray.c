@@ -33,37 +33,37 @@ int peak(Stack* s){
     }
     return s->data[s->top];
 }
-void pop(Stack *s){
+int pop(Stack *s){
     if(isEmpty(s)){
         printf("\nStack Is Empty !");
-        return;
+        return -1;
     }
-    s->top--;
+    return s->data[s->top--];
 }
-Stack* createStack(){
+Stack* createStack(int size){
     Stack *s = (Stack *)malloc(sizeof(Stack));
     s->top = -1;
-    s->size = 5;
+    s->size = size;
     s->data = (int *)malloc(s->size * sizeof(int));
     return s;
 }
-int main(){
-    Stack *s1 = createStack();
-    Stack *s2 = createStack();
+// int main(){
+//     Stack *s1 = createStack();
+//     Stack *s2 = createStack();
 
-    push(s1,10);
-    push(s1,20);
-    push(s1,30);
-    push(s1,40);
-    push(s2,1);
-    push(s2,2);
-    push(s2,3);
-    push(s2,4);
+//     push(s1,10);
+//     push(s1,20);
+//     push(s1,30);
+//     push(s1,40);
+//     push(s2,1);
+//     push(s2,2);
+//     push(s2,3);
+//     push(s2,4);
 
-    printf("\n%d",peak(s1));
-    printf("\n%d",peak(s2));
-    pop(s1);
-    pop(s2);
-    printf("\n%d",peak(s1));
-    printf("\n%d",peak(s2));
-}
+//     printf("\n%d",peak(s1));
+//     printf("\n%d",peak(s2));
+//     pop(s1);
+//     pop(s2);
+//     printf("\n%d",peak(s1));
+//     printf("\n%d",peak(s2));
+// }

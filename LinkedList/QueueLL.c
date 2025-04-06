@@ -14,6 +14,10 @@ typedef struct
     Node* rear;
 }Queue;
 
+int isEmpty(Queue *q){
+    return q->front == NULL; 
+}
+
 Queue* createQueue(){
     Queue* newqueue = (Queue *)malloc(sizeof(Queue));
     newqueue->front = NULL;
@@ -42,8 +46,17 @@ void enQueue(Queue *queue,int data){
     queue->rear = newNode;
 }
 
-void deQueue(Queue *queue){
+int deQueue(Queue *queue){
+    if(isEmpty(queue)){
+        printf("Queue Is Empty !");
+        return -1;
+    }
+    int data = queue->front->data;
     queue->front = queue->front->next;
+    if(queue->front == NULL){
+        queue->front = queue->rear = NULL;
+    }
+    return data;
 }
 
 void display(Queue *queue){
