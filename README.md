@@ -13,6 +13,7 @@ C-DSA-Repository/
 ├── LinkedList
 ├── Queue
 ├── Stacks
+├── Graph
 ├── Tree(Soon)
     </pre>
     <p>Each folder contains:</p>
