@@ -4,7 +4,7 @@
 
 typedef struct
 {
-    char *id;
+    int id;
     char *name;
     char *gender;
 }Student;
@@ -13,7 +13,7 @@ typedef struct
 typedef struct Node
 {
     struct Node *prev;
-    Student student;
+    Student *student;
     struct Node *next;
 }Node;
 typedef struct
@@ -30,27 +30,26 @@ LL* createList(){
     return list;
 }
 
-Student createStrudent(char *id,char *name,char *gender){
+Student *createStrudent(int id,char *name,char *gender){
     Student *s = (Student*)malloc(sizeof(Student));
-    s->id = (char*)calloc(7,sizeof(char));
+    s->id = id;
     s->name = (char*)calloc(7,sizeof(char));
     s->gender = (char*)calloc(7,sizeof(char));
 
-    strcpy(s->id,id);
     strcpy(s->name,name);
     strcpy(s->gender,gender);
 
-    return *s;
+    return s;
 }
 
-Node* createNode(char *id,char *name,char *gender){
+Node* createNode(int id,char *name,char *gender){
     struct Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->student = createStrudent(id,name,gender); 
     newNode->next = NULL;
     newNode->prev = NULL;
     return newNode;
 }
-void insertFirst(LL *list,char *id,char *name,char *gender){
+void insertFirst(LL *list,int id,char *name,char *gender){
     Node *newNode = createNode(id,name,gender);
     if(list->head == NULL){
         list->head = list->tail = newNode;
@@ -61,7 +60,7 @@ void insertFirst(LL *list,char *id,char *name,char *gender){
     list->head = newNode;
 }
 
-void insertLast(LL *list,char *id,char *name,char *gender){
+void insertLast(LL *list,int id,char *name,char *gender){
     
     Node *newNode = createNode(id,name,gender);
     if(list->head == NULL){
@@ -73,10 +72,10 @@ void insertLast(LL *list,char *id,char *name,char *gender){
     newNode->prev = list->tail;
     list->tail = newNode;
 }
-void displayStudent(Student s){
-    printf("\n\nId : %s",s.id);
-    printf("\nName : %s",s.name);
-    printf("\nGender : %s",s.gender);
+void displayStudent(Student *s){
+    printf("\n\nId : %d",s->id);
+    printf("\nName : %s",s->name);
+    printf("\nGender : %s",s->gender);
 }
 void deleteFirst(LL *list){
     if(list->head == NULL){
@@ -118,6 +117,32 @@ void deleteLast(LL *list){
     temp->next = NULL;
     list->tail = temp;
 }
+
+void sortList(LL *list){
+    
+    Node *outer = list->head;
+    while (outer)
+    {
+        Node *inner = outer->next;
+        Node *temp = outer;
+        while (inner)
+        {
+            if(temp->student->id > inner->student->id){
+                temp = inner;
+            }
+            inner = inner->next;
+        }
+        
+        if(temp != outer){
+            Student *  student = temp->student;
+            temp->student = outer->student;
+            outer->student = student;
+        }
+        outer = outer->next;
+    }
+    
+}
+
 void display(LL *list){
     if(list->head == NULL){
         printf("\nList Has No Elements !!");
@@ -125,11 +150,12 @@ void display(LL *list){
     }
     Node *temp = list->head;
     printf("\n\n");
-    do
+    while(temp != NULL)
     {
         displayStudent(temp->student);
         temp = temp->next;
-    }while(temp != NULL);
+    }
+    // while(temp != NULL);
     printf("\n\nNULL");
 }
 void displayRev(LL *list){

@@ -1,6 +1,5 @@
 #include "stdio.h"
 #include "stdlib.h"
-// #include "../LinkedList/QueueLL.c"
 #include "../LinkedList/LL.c"
 
 
