@@ -14,6 +14,8 @@ C-DSA-Repository/
 ├── Queue
 ├── Stacks
 ├── Tree
+├── Sorting
+├── Searching(Soon)
     </pre>
     <p>Each folder contains:</p>
     <ul>
