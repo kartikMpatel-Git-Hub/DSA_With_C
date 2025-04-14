@@ -21,4 +21,5 @@ int main(){
     printf("\n\nLeaf Node  : %d",leafNode(t->root));
     printf("\n\nInternal Node  : %d",internalNode(t->root));
     printf("\n\nSearch |11|  : %s",serachElement(t->root,11) ? "Found !" : "Not Found !");
+    
 }
