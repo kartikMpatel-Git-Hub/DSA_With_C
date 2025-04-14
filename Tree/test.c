@@ -3,8 +3,8 @@
 
 int main(){
     BTree *t = createTree();
-    int arr[] = {5,2,7,1,3,8,6,9};
-    for(int i = 0; i < 8; i++){
+    int arr[] = {5,2,7,1,3,8,6,10,9,11};
+    for(int i = 0; i < 10; i++){
         t->root = addNode(t->root,arr[i]);
     }
     printf("\n\n");
@@ -18,4 +18,7 @@ int main(){
 
     printf("\n\nTotal Node : %d",totalNode(t->root));
     printf("\n\nLevel Tree : %d",levelTree(t->root));
+    printf("\n\nLeaf Node  : %d",leafNode(t->root));
+    printf("\n\nInternal Node  : %d",internalNode(t->root));
+    printf("\n\nSearch |11|  : %s",serachElement(t->root,11) ? "Found !" : "Not Found !");
 }

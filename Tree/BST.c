@@ -74,6 +74,29 @@ int totalNode(Node *root){
     int right = totalNode(root->right);
     return left + right + 1;
 }
+
+int leafNode(Node *root){
+    if(root->left == NULL && root->right == NULL)
+        return 1;
+    int left = 0 , right = 0;
+    if(root->left != NULL)
+        left = leafNode(root->left);
+    if(root->right != NULL)
+        right = leafNode(root->right);
+    return left + right;
+}
+int internalNode(Node *root){
+    if(root->left == NULL && root->right == NULL){
+        return 0;
+    }
+    int left = 0 , right = 0;
+    if(root->left != NULL)
+        left = internalNode(root->left);
+    if(root->right != NULL)
+        right = internalNode(root->right);
+    return left + right  + 1;
+}
+
 void levelOrder(Node *root){
     int n = totalNode(root);
     Node *queue[n];
@@ -98,3 +121,18 @@ int levelTree(Node *root){
     return (left > right) ? left + 1 : right + 1;
 }
 
+int serachElement(Node *root,int key){
+    if(root == NULL){
+        return 0;
+    }
+    if(root->data == key){
+        return 1;
+    }
+    else if(root->data < key){
+        return serachElement(root->right,key);
+    }
+    else{
+        return serachElement(root->left,key);
+    }
+    return 0;
+}
