@@ -13,14 +13,9 @@ C-DSA-Repository/
 ├── LinkedList
 ├── Queue
 ├── Stacks
-<<<<<<< HEAD
 ├── Graph
-├── Tree(Soon)
-=======
-├── Tree
 ├── Sorting
-├── Searching(Soon)
->>>>>>> 5ed6e19d4cce04c61576f115e51b6aacdfdf370e
+├── Seraching
     </pre>
     <p>Each folder contains:</p>
     <ul>
