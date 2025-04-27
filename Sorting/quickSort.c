@@ -23,27 +23,17 @@ int partition(int *arr,int start,int end){
     int temp = arr[pivot];
     arr[pivot] = arr[right];
     arr[right] = temp;
-
+    
     return right;
 }
 
-void quickSort(int *arr,int left,int right){
+int quickSort(int *arr,int left,int right){
+    int countLeft = 0,countRight = 0;
     if(left < right){
         int pivot = partition(arr,left,right);
-
-        quickSort(arr,left,pivot-1);
-        quickSort(arr,pivot + 1,right);
+        countLeft = quickSort(arr,left,pivot-1);
+        countRight = quickSort(arr,pivot + 1,right);
+        return countLeft + countRight + 1;
     }
-}
-
-void main(){
-    // int arr[] = {9,1,8,2,3,7,4,6,5};
-    int arr[] = {19,10,72,26,55,54,35,42,81};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    for(int i = 0; i < size; i++)
-        printf("%d\t",arr[i]);
-    quickSort(arr,0,size-1);
-    printf("\n\n");
-    for(int i = 0; i < size; i++)
-        printf("%d\t",arr[i]);
+    return 0;
 }

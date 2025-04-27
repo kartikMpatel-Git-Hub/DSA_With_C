@@ -1,38 +1,49 @@
 // #include "IntGraph.c"
-#include "Graph.c"
+// #include "Graph.c"
 // #include "GraphWithLL.c"
+#include "DirectedUnweightedGraph.c"
 int main(){
     int n = 5;
 
-    GraphMatrix *m = createGraphMatrix(n);
-    addEdgeMatrix(m,0,1);
-    addEdgeMatrix(m,0,2);
-    addEdgeMatrix(m,1,3);
-    addEdgeMatrix(m,2,3);
-    addEdgeMatrix(m,3,4);
-    printf("\n");
-    displatyMatrix(m);
-    printf("\n");
-    degreeOfVertexMatrix(m);
-    printf("\n");
-    dfsMatrix(m);
-    printf("\n");
-    bfsMatrix(m);
+    Graph *g = createDirectedUnweightedGraph(6);
+    addEdgeDirectedUnweighted(g,0,1);
+    addEdgeDirectedUnweighted(g,0,2);
+    addEdgeDirectedUnweighted(g,1,2);
+    addEdgeDirectedUnweighted(g,1,3);
+    addEdgeDirectedUnweighted(g,2,4);
+    addEdgeDirectedUnweighted(g,3,4);
+    addEdgeDirectedUnweighted(g,3,5);
 
-    GraphLL *g = createGraphLL(n);
-    addEdgeLL(g,0,1);
-    addEdgeLL(g,0,2);
-    addEdgeLL(g,1,3);
-    addEdgeLL(g,2,3);
-    addEdgeLL(g,3,4);
-    printf("\n");
-    displayGraphLL(g);
-    printf("\n");
-    degreeOfVertexLL(g);
-    printf("\n");
-    dfsLL(g);
-    printf("\n");
-    bfsLL(g);
+    displayDirectedUnweightedGraph(g);
+    // GraphMatrix *m = createGraphMatrix(n);
+    // addEdgeMatrix(m,0,1);
+    // addEdgeMatrix(m,0,2);
+    // addEdgeMatrix(m,1,3);
+    // addEdgeMatrix(m,2,3);
+    // addEdgeMatrix(m,3,4);
+    // printf("\n");
+    // displatyMatrix(m);
+    // printf("\n");
+    // degreeOfVertexMatrix(m);
+    // printf("\n");
+    // dfsMatrix(m);
+    // printf("\n");
+    // bfsMatrix(m);
+
+    // GraphLL *g = createGraphLL(n);
+    // addEdgeLL(g,0,1);
+    // addEdgeLL(g,0,2);
+    // addEdgeLL(g,1,3);
+    // addEdgeLL(g,2,3);
+    // addEdgeLL(g,3,4);
+    // printf("\n");
+    // displayGraphLL(g);
+    // printf("\n");
+    // degreeOfVertexLL(g);
+    // printf("\n");
+    // dfsLL(g);
+    // printf("\n");
+    // bfsLL(g);
 
     // addEdge(g,4,5);
     // degreeOfVertexMatrix(g);

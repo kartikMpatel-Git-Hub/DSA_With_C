@@ -4,7 +4,7 @@
 
 typedef struct Node
 {
-    int data;
+    char data;
     struct Node *next;
 }Node;
 
@@ -19,7 +19,7 @@ Stack* createStack(){
     return newList;
 }
 
-Node* createNode(int data){
+Node* createNode(char data){
     Node *newNode = (Node *)malloc(sizeof(Node)); 
     newNode->data = data;
     newNode->next = NULL;
@@ -29,7 +29,7 @@ Node* createNode(int data){
 int isEmptyStack(Stack *list){
     return list->top == NULL;
 }
-void push(Stack *list,int data){
+void push(Stack *list,char data){
     if(list == NULL){
         printf("\nList Is Not Created !!");
         return;
@@ -39,12 +39,18 @@ void push(Stack *list,int data){
     list->top = newNode;
 }
 
-int pop(Stack *list){
-    int ele = list->top->data;
+char pop(Stack *list){
+    if(isEmptyStack(list))
+        return '\0';
+    char ele = list->top->data;
     list->top = list->top->next;
     return ele;
 }
-
+char peak(Stack *list){
+    if(isEmptyStack(list))
+        return '\0';
+    return list->top->data;
+}
 void display(Stack *list){
 
     if(list == NULL){
@@ -59,8 +65,7 @@ void display(Stack *list){
     printf("\n TOP \n");
     while (temp != NULL)
     {
-        printf("\n|%d|\n____",temp->data);
+        printf("\n|%c|\n____",temp->data);
         temp = temp->next;
     }
-    // printf("NULL");
 }
